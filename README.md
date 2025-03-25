@@ -148,4 +148,4 @@ sudo systemctl restart php8.1-fpm
 
 Happy debugging! 🐛💻
 
-> Authored by **Taiwo Akinwunmi** | DevOps @ Sunday | [taiwo.akinwunmi@sunday.de](mailto:taiwo.akinwunmi@sunday.de)
+> Authored by **Taiwo Akinwunmi** | DevOps @ Sunday
