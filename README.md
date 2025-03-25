@@ -9,10 +9,10 @@ This guide is aimed at helping developers understand common server error codes (
 
 | Code | Meaning                  | Example Scenario                        | First Step to Check             |
 |------|--------------------------|----------------------------------------|----------------------------------|
-| **500**  | Internal Server Error     | Magento throws fatal error on checkout page | Check PHP-FPM, app logs (`/var/log/nginx/error.log`, `php-fpm.log`) |
-| **502**  | Bad Gateway              | Varnish can't connect to Magento (PHP-FPM or app server down) | Is PHP-FPM or Nginx running on the app server? Restart services if needed |
-| **503**  | Service Unavailable      | App server overwhelmed | Check CloudWatch alarms/Monitor, request volume spike |
-| **504**  | Gateway Timeout          | Magento is blocked on a long MySQL query or upstream timed out | Check RDS performance insights, slow query logs, or memory pressure on app servers |
+| **500**  | Internal Server Error     | Unhandled exception or app crash in production | Check app logs (`/var/log/...`, Docker, journalctl) |
+| **502**  | Bad Gateway              | Load balancer couldn't reach backend server | Is upstream service running? Restart if necessary |
+| **503**  | Service Unavailable      | Server is overwhelmed or in maintenance mode | Check resource usage, scaling events, or health checks |
+| **504**  | Gateway Timeout          | Backend took too long to respond | Check for long-running queries, service timeouts, or memory pressure |
 
 ---
 
